@@ -28,7 +28,7 @@ settingsBill.makeCall();
         settingsBill.sendSms();
         settingsBill.sendSms();
         assert.equal(3.05.toFixed(2),settingsBill.getTotalCost());
-        assert.equal(1.35,settingsBill.getTotalCallCost().toFixed(2));
-        assert.equal(1.70,settingsBill.getTotalSmsCost().toFixed(2));
+        assert.equal(1.35,settingsBill.getTotalCallCost());
+        assert.equal(1.70,settingsBill.getTotalSmsCost());
     })
 })
