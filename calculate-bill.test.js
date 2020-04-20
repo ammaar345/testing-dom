@@ -1,9 +1,10 @@
 describe("Tests Calculate-Bill function", function() {
 
 
-    it("Should return 9.75 for 3 calls and 2 sms's ",function(){
-       var string="call,call , sms, call , sms";
-        assert.equal(totalPhoneBill(string),9.75);
+    it("Should return 21.50 for 7 calls and 2 sms's. ",function(){
+       var string="call,call,call,call,call, sms, call, sms,call,sms";
+       
+       assert.equal(totalPhoneBill(string),21.50);
 
     });
 
