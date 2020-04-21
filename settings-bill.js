@@ -33,7 +33,7 @@ function BillWithSettings(){
      callCostTotal+=theCallCost;
      }
      function sendSms(){
-         callCostTotal+=theSmsCost;
+         smsCostTotal+=theSmsCost;
      }
      function getTotalCallCost(){
         return callCostTotal.toFixed(2);
@@ -42,7 +42,7 @@ function BillWithSettings(){
            return smsCostTotal.toFixed(2);
         }
      function getTotalCost(){
-     return (callCostTotal+smsCostTotal);
+     return (callCostTotal+smsCostTotal).toFixed(2);
      }
      
         return{
@@ -56,9 +56,8 @@ function BillWithSettings(){
       setWarningLevel,
        makeCall,
        sendSms,
-       getTotalCost,
+       getTotalCallCost,
         getTotalSmsCost,
-        getTotalCallCost
-           
+        getTotalCost    
         }
     }
