@@ -27,7 +27,7 @@ describe("use values",function(){
 settingsBill.makeCall();
         settingsBill.sendSms();
         settingsBill.sendSms();
-        assert.equal(3.05.toFixed(2),settingsBill.getTotalCost());
+        assert.equal(3.05,settingsBill.getTotalCost());
         assert.equal(1.35,settingsBill.getTotalCallCost());
         assert.equal(1.70,settingsBill.getTotalSmsCost());
     })
