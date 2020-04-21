@@ -1,6 +1,7 @@
 describe("use values",function(){
     it("should be able to use the set call cost.",function(){
         let settingsBill=BillWithSettings();
+        settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(2.25);
         settingsBill.setSmsCost(0.85);
         settingsBill.makeCall();
@@ -12,6 +13,7 @@ describe("use values",function(){
     })
     it("should be able to use the call cost set for 2 calls at R1.35 each. ",function(){
         let settingsBill=BillWithSettings();
+        settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(1.35);
         settingsBill.setSmsCost(0.85);
         settingsBill.makeCall();
@@ -22,6 +24,7 @@ describe("use values",function(){
     })
     it("should be able to send 2 sms's at R0.85 each and make 1 call at R1.35. ",function(){
         let settingsBill=BillWithSettings();
+        settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(1.35);
         settingsBill.setSmsCost(0.85);
 settingsBill.makeCall();

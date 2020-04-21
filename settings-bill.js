@@ -30,12 +30,13 @@ function BillWithSettings(){
     return theCriticalLevel;
         }
         function makeCall(){
-            if (hasReachedCriticalLevel()){
+            if (!hasReachedCriticalLevel()){
      callCostTotal+=theCallCost}
      }
      function sendSms(){
-       if(hasReachedCriticalLevel())
-        { smsCostTotal+=theSmsCost}
+       if(!hasReachedCriticalLevel())
+        { 
+            smsCostTotal+=theSmsCost}
      }
      function getTotalCallCost(){
         return callCostTotal.toFixed(2);
@@ -52,7 +53,7 @@ function BillWithSettings(){
      function totalClassName(){
         if(hasReachedCriticalLevel()){
             return "critical";
-        }
+        }else
         if(getTotalCost()>=getWarningLevel()){
              return "warning";
          }
