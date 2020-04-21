@@ -58,7 +58,7 @@ function BillWithSettings(){
        sendSms,
        getTotalCost,
         getTotalSmsCost,
-        getTotalCallCost,
+        getTotalCallCost
            
         }
     }
