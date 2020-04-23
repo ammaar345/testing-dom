@@ -1,30 +1,49 @@
-function totalPhoneBill(billString){
-var billItems = billString.split(",");
-var billTotal = 0;
-//loop over all the bill items
-for (var i=0;i<billItems.length;i++){
-    var billItem = billItems[i].trim();
-    if (billItem === "call"){
-        billTotal += 2.75;
-    }
-    else if (billItem === "sms"){
-        billTotal += 0.75;
-    }
-}
-var roundedBillTotal = billTotal.toFixed(2);
-return roundedBillTotal;
-}
-function styleTotal(roundedBillTotal){ 
-    const currTotal=Number(roundedBillTotal);
-  colorChange.classList.remove("danger");
-  colorChange.classList.remove("warning");
-  if(currTotal>=30){
-      //make red
-      colorChange.classList.add("danger")
-  } 
-  else if(currTotal>20 && currTotal<30)
-  {//make orange
-colorChange.classList.add("warning");
-  }
+function calculateBill ()
+{ var criticalThresh=30;
+    var warningThresh=20;
+    var totalCallPr=0;
+    var totalSmsPr=0;
+    var smsValue=0.75;
+    var callValue=2.75;
+    function getSmsPriceVal(){
+return smsValue;
 
+    }
+    function getCallPriceVal(){
+return callValue
+    }
+function callMaker(){
+totalCallPr+=callValue;
+}
+function smsMaker(){
+totalSmsPr+=smsValue;
+
+}
+function totalAdder(){
+    return (totalSmsPr+totalCallPr).toFixed(2)
+}
+function getWaLevel(){
+return warningThresh;
+}
+function getCrLevel(){
+    return criticalThresh;
+}
+function levelOfWarn (){
+if (totalAdder()>getCrLevel()){
+return "critical"
+}
+else if (totalAdder()>getWaLevel()){
+return "warning"
+}
+}
+    
+    return{ getCrLevel,
+        getWaLevel,
+        levelOfWarn,
+        smsMaker,
+        callMaker,
+        getCallPriceVal,
+        getSmsPriceVal
+
+    }
 }
