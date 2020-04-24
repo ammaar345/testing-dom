@@ -3,13 +3,8 @@ function textBill(){
     var smsPriceVal=0.75;
     var warningVal=30;
     var criticalVal=50;
-    callPriceTotal=0;
-    smsPriceTotal=0;
-function setCallPrice(callPrice){
-callPriceVal=callPrice;
-}function setSmsPrice(smsPrice){
-smsPriceVal=smsPrice;
-}
+  var  callPriceTotal=0;
+   var smsPriceTotal=0;
 function getSmsPrice(){
 return smsPriceVal;
 }
@@ -17,53 +12,52 @@ function getCallPrice(){
 return callPriceVal;
 
 }
+
+function placeCall(){
+   callPriceTotal+=callPriceVal;
+   }
+   function placeSms(){
+   smsPriceTotal+=smsPriceVal;  
+   }
+   
 function getTotalCallPrice(){
-   callPriceTotal
+ return  callPriceTotal;
 }
 function getTotalSmsPrice(){
-return smsPriceTotal
-}
+return smsPriceTotal;}
 function getTotalPrice(){
-   return (callPriceTotal+smsPriceTotal).toFixed(2)
+   return (callPriceTotal+smsPriceTotal).toFixed(2);
 }
-// function setWarnLevel(warnLvl){
-// warningVal=warnLvl;
-// }
-// function setCritLevel(critLvl){
-// criticalVal=critLvl}
+
 function getWarnLevel(){
-   return warningVal
+   return warningVal;
 }
 function getCritLevel (){
-   return criticalVal
-}
-function placeCall(){
-callPriceTotal+=callPrice;
-}
-function placeSms(){
-smsPriceTotal+=smsPrice;  
+   return criticalVal;
 }
 function lvlName(){
-   if (getWarnLevel()<getTotalPrice){
-      return "warning"
-   }
-   else if (getTotalPrice()>getCritLevel())
+   if (getTotalPrice()>getCritLevel())
    {return "critical";
 
    }
+
+   else if (getTotalPrice()>getWarnLevel()){
+      return "warning"
+   }
+      else {return ""}
 }
 
 
 
-   return{setCallPrice,
-setSmsPrice,
+   return{
 getCallPrice,
 getSmsPrice,
 placeCall,
 placeSms,
 getTotalCallPrice,
 getTotalSmsPrice,
-getTotalPrice
+getTotalPrice,
+lvlName
 
    } 
 }
